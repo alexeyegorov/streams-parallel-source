@@ -1,4 +1,4 @@
-package streams.io;
+package streams.io.parallel;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -24,7 +24,7 @@ import stream.io.SourceURL;
 /**
  * @author alexey
  */
-public class IterateFilesStream extends DistributedMultiStream {
+public class IterateFilesStream extends ParallelMultiStream {
 
     static Logger log = LoggerFactory.getLogger(IterateFilesStream.class);
 

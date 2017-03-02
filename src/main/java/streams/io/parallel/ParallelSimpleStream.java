@@ -1,4 +1,4 @@
-package streams.io;
+package streams.io.parallel;
 
 import stream.io.AbstractStream;
 import stream.io.SourceURL;
@@ -9,13 +9,13 @@ import stream.io.SourceURL;
  * method should be called before the serialization and thus we can save serializable settings
  * before the program is distributed over the cluster.
  */
-public abstract class DistributedSimpleStream extends AbstractStream implements DistributedStream {
+public abstract class ParallelSimpleStream extends AbstractStream implements ParallelStream {
 
-    public DistributedSimpleStream(SourceURL url) {
+    public ParallelSimpleStream(SourceURL url) {
         super(url);
     }
 
-    public DistributedSimpleStream() {
+    public ParallelSimpleStream() {
         super();
     }
 }
