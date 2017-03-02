@@ -24,9 +24,9 @@ import stream.io.SourceURL;
 /**
  * @author alexey
  */
-public class IterateFilesStream extends ParallelMultiStream {
+public class IterateHDFSFilesStream extends ParallelMultiStream {
 
-    static Logger log = LoggerFactory.getLogger(IterateFilesStream.class);
+    static Logger log = LoggerFactory.getLogger(IterateHDFSFilesStream.class);
 
     @Parameter(required = true)
     String ending = "";
@@ -47,9 +47,8 @@ public class IterateFilesStream extends ParallelMultiStream {
     private int countReadNext;
     private FileSystem fs;
 
-
     /**
-     * Number of all initialiazed copies.
+     * Number of all initialized copies.
      */
     private int numberOfCopies = 1;
 
@@ -58,12 +57,12 @@ public class IterateFilesStream extends ParallelMultiStream {
      */
     private int copyNumber = 0;
 
-    public IterateFilesStream() {
+    public IterateHDFSFilesStream() {
         super();
     }
 
 
-    public IterateFilesStream(SourceURL url) {
+    public IterateHDFSFilesStream(SourceURL url) {
         super(url);
     }
 
@@ -142,7 +141,7 @@ public class IterateFilesStream extends ParallelMultiStream {
         // define new end of the file
         limitFiles = stopStreamFile - startStreamFile;
 
-        log.info("Initializing IterateFilesStream for instance {} of {}, begin with {} up to {}.",
+        log.info("Initializing IterateHDFSFilesStream for instance {} of {}, begin with {} up to {}.",
                 copyNumber, numberOfCopies, startStreamFile, stopStreamFile);
 
         this.fileStatuses = new ArrayList<>(this.fileStatuses.subList(startStreamFile, stopStreamFile));
